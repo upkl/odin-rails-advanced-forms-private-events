@@ -1,0 +1,35 @@
+<h2>New Event</h2>
+
+<p>Created by: <%= link_to @event.creator.name, @event.creator %></p>
+
+<ul>
+  <%= form_with model: @event do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div>
+      <%= form.label :date %>
+      <%= form.datetime_field :date %>
+    </div>
+
+    <div>
+      <%= form.label :location %>
+      <%= form.text_field :location %>
+    </div>
+
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</ul>
+
+<%= render 'common/event_links' %>
+
+<%= render 'common/devise_links' %>
