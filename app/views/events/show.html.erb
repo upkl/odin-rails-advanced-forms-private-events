@@ -1,0 +1,9 @@
+<h2><%= @event.name %></h2>
+
+<p>Created by: <%= link_to @event.creator.name, @event.creator %></p>
+
+<p><%= "Date: #{@event.date}" %></p>
+
+<p><%= link_to "All Events", Event %></p>
+
+<%= render 'devise_links' %>
