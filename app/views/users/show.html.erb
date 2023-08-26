@@ -6,9 +6,11 @@
   <% @user.events.each do |event| %>
     <li>
       <%= link_to event.name, event %>
-      <%= "#{event.date}" %>
+      <%= "#{event.date}, #{event.location}" %>
     </li>
   <% end %>
 </ul>
+
+<p><%= link_to "All Events", Event %></p>
 
 <%= render 'common/devise_links' %>
