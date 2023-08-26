@@ -4,6 +4,8 @@
 
 <p><%= "Date: #{@event.date}" %></p>
 
+<p><%= @event.description %></p>
+
 <p><%= link_to "All Events", Event %></p>
 
-<%= render 'devise_links' %>
+<%= render 'common/devise_links' %>
