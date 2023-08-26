@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :events
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  resources :event_attendances, only: %i[new destroy]
 
   # Defines the root path route ("/")
   root 'events#index'

@@ -11,21 +11,25 @@
   <% end %>
 </ul>
 
-<h3>Past Attended Events</h3>
+<% if @user.attended_events.past.exists? %>
+  <h3>Past Attended Events</h3>
 
-<ul>
-  <% @user.attended_events.past.each do |event| %>
-    <li><%= link_to event.name, event %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @user.attended_events.past.each do |event| %>
+      <li><%= link_to event.name, event %></li>
+    <% end %>
+  </ul>
+<% end %>
 
-<h3>Future Attended Events</h3>
+<% if @user.attended_events.future.exists? %>
+  <h3>Future Attended Events</h3>
 
-<ul>
-  <% @user.attended_events.future.each do |event| %>
-    <li><%= link_to event.name, event %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @user.attended_events.future.each do |event| %>
+      <li><%= link_to event.name, event %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= render 'common/event_links' %>
 
